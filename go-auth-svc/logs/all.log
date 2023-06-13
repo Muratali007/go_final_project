@@ -1,0 +1,1 @@
+time="2023-06-14T00:45:28+06:00" level=error msg="failed to connect to `host=localhost user=postgres database=authentication_manager`: server error (\xc2\xc0\xc6\xcd\xce: \xe1\xe0\xe7\xe0 \xe4\xe0\xed\xed\xfb\xf5 \"authentication_manager\" \xed\xe5 \xf1\xf3\xf9\xe5\xf1\xf2\xe2\xf3\xe5\xf2 (SQLSTATE 3D000))" func="auth/pkg/db.Init()" file="db.go:18"

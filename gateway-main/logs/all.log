@@ -1,0 +1,2 @@
+time="2023-06-14T00:48:46+06:00" level=info msg="Bad Requestinvalid character '\"' after object key:value pair" func="gateway/pkg/auth/routes.Register()" file="register.go:21"
+time="2023-06-14T02:27:42+06:00" level=info msg="Bad Requestjson: cannot unmarshal string into Go struct field CreateFootballerRequestBody.price of type int64" func="gateway/pkg/footballer/routes.CreateFootballer()" file="create_footballer.go:24"

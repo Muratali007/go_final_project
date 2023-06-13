@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./pkg/footballer/pb";
+
+service FootballerService {
+  rpc CreateFootballer(CreateFootballerRequest) returns (CreateFootballerResponse) {}
+  rpc FindOne(FindOneRequest) returns (FindOneResponse){}
+  rpc DeleteFootballer(DeleteFootballerRequest) returns (DeleteFootballerResponse) {}
+}
+
+message CreateFootballerRequest {
+  string name = 1;
+  string surname = 2;
+  int64 price = 3;
+  string club = 4;
+}
+
+message CreateFootballerResponse {
+  int64 status = 1;
+  string error = 2;
+  int64 id = 3;
+}
+
+message FindOneData {
+  int64 id = 1;
+  string name = 2;
+  string surname = 3;
+  int64 price = 4;
+  string club = 5;
+}
+
+message FindOneRequest {
+  int64 id = 1;
+}
+
+message FindOneResponse {
+  int64 status = 1;
+  string error = 2;
+  FindOneData data = 3;
+}
+
+message DeleteFootballerRequest {
+  int64 id = 1;
+}
+
+message DeleteFootballerResponse {
+  int64 status = 1;
+  string error = 2;
+}

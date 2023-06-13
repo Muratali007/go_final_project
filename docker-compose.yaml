@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  gp-footballer-svc:
+    build: gp-footballer-svc
+    restart: unless-stopped
+    ports:
+      - "50052:50052"
+    networks:
+      - backend
+  go-auth-svc:
+    build: go-auth-svc
+    restart: unless-stopped
+    ports:
+      - "50051:50051"
+    networks:
+      - backend
+  go-club-svc:
+    build: go-club-svc
+    restart: unless-stopped
+    ports:
+      - "50053:50053"
+    networks:
+      - backend
+  gateway-main:
+    build: gateway-main
+    restart: unless-stopped
+    ports:
+      - "8085:8085"
+    networks:
+      - backend
+    depends_on:
+      - gp-footballer-svc
+      - go-auth-svc
+      - go-club-svc
+
+networks:
+  backend:
+    driver: bridge
